@@ -1,0 +1,79 @@
+@import 'mixins';
+
+#top_menu {
+	width: 500px;
+	height: 60px;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0px;
+	left: 50%;
+  transform: translateX(-50%);
+	z-index: 999;	
+	font-family: 'Roboto';
+	display: none;
+
+	ul {
+
+		list-style: none;
+		margin-top: 15px;		
+		.menu-icon {
+			width: 35px;
+			height: 35px;
+			float: left;
+			margin: 0px 25px 0px 25px;
+			background-image: url('<%= asset_path('arrowup.png') %>');
+			background-size: 100%;
+			opacity: 0.2;
+			@include transition(0.5s ease all);
+			&:hover {
+				opacity: 0.7;
+				@include transition(0.5s ease all);
+			}
+		}
+
+		li {
+
+			color: rgba(255,255,255,0.7);
+			font-size: 25px;
+			float: left;
+			padding: 0px 20px;
+			padding-bottom: 5px;
+			border-left: 1px solid rgba(255,255,255,0.1);
+			@include transition(0.3s ease all);
+			&:hover, &.hovered {
+				@include transition(0.3s ease all);
+				color: white;
+				border-bottom: 2px solid rgba(0,0,0,0.2);
+			}
+
+		}
+	}
+}
+@media (max-width: 1400px) {
+	#top_menu {
+		width: 400px;
+		height: 40px;
+		ul {
+			margin-top: 5px;		
+			.menu-icon {
+				width: 20px;
+				height: 20px;
+				margin: 6px 15px 0px 15px;
+			}
+
+			li {
+				font-size: 19px;
+				padding: 3px 22px;
+
+				border-left: 1px solid rgba(255,255,255,0.1);
+				@include transition(0.3s ease all);
+				&:hover, &.hovered {
+					@include transition(0.6s ease all);
+					color: white;
+					border-bottom: 2px solid rgba(0,0,0,0.2);
+				}
+
+			}
+		}
+	}
+}

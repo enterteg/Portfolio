@@ -1,0 +1,72 @@
+@import 'mixins'
+
+#projects
+	width: 100%
+	height: 100vh
+
+	background-image: url('<%= asset_path('bg-idea.jpg') %>')
+	background-size: cover
+	background-position: center
+	position: relative
+
+	#projects_banner
+		width: 800px
+		height: 450px
+		background-color: rgba(0,0,0,0.5)
+		position: relative
+		top: 150px
+		left: 100px
+		+transition(1s ease all)
+		transform: translateY(-50px)
+		opacity: 0
+		&.show
+			opacity: 1
+			transform: translateY(0px)
+		.arrow
+			width: 30px
+			height: 30px
+			background-color: red
+			position: absolute
+			z-index: 1
+			&.prev
+				top: 49%
+				left: -40px
+			&.next
+
+		ul.projects_list
+			list-style: none
+			position: relative
+			li
+				.p_head 
+					position: absolute
+					height: 60px
+					line-height: 60px
+					font-size: 30px
+					left: 0px
+					right: 0px
+					top: 75%
+					text-align: center
+					background-color: rgba(0,0,0,0.5)
+				.photo
+					width: 800px
+					height: 450px
+					overflow: hidden
+					img
+						width: 800px
+				&.hide
+					display: none
+
+
+	#about_projects
+		right: 50px
+		left: auto
+		.header
+			text-align: right
+			position: relative
+			right: 20px
+		.description
+			text-align: right
+			width: 380px
+			text-shadow: 0px 0px 3px rgba(0,0,0,0.6)
+
+

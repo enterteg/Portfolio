@@ -1,0 +1,13 @@
+@mixin grayscale($percent) {
+  -webkit-filter: grayscale($percent) !important;
+  -moz-filter:    grayscale($percent) !important;
+  -ms-filter:     grayscale($percent) !important;
+  -o-filter:      grayscale($percent) !important;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}

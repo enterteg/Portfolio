@@ -1,0 +1,102 @@
+#top_menu
+	%ul
+		= link_to 'javascript:void();', :onclick => "scroll_to('#header');" do
+			.menu-icon
+		= link_to 'javascript:void();', :onclick => "scroll_to('#about');" do
+			%li#about_me About me
+		= link_to 'javascript:void();', :onclick => "scroll_to('#projects');" do
+			%li Projects
+		= link_to 'javascript:void();', :onclick => "scroll_to('#contact');" do
+			%li Contact
+
+#header
+	=link_to 'https://www.facebook.com/profile.php?id=100002414904215' do
+		#social
+	#container
+		#logo
+			.logo.portfolio portfolio
+			.logo.name Dawid Jagieła
+			.logo.quote elegance and simplicity
+		#menu
+			%nav
+				%ul
+					= link_to 'javascript:void();', :onclick => "scroll_to('#about');" do
+						%li About me
+					= link_to 'javascript:void();', :onclick => "scroll_to('#projects');" do
+						%li Projects
+					= link_to 'javascript:void();', :onclick => "scroll_to('#contact');" do
+						%li Contact
+#about
+	#me.text_block
+		.header
+			About me
+		.description
+			%p 
+				I am 20 years old Computer Science  
+				%br
+				student from Poland.
+			%p
+				Webmastering is my passion, 
+				%br 
+				I love when ideas becomes reality
+				%br 
+				and static projects becomes alive. 
+			%p
+				I'm not afraid of challenges, 
+				%br 
+				they encourage me to work harder.
+	#whatido
+		.header
+			I can do for you
+		%ul.whatido
+			%li.list private site / customized blog
+			%li.list web for your company
+			%li.list web apps to simplify your life
+			%li.nonlist ...and whatever you will need!
+	#technologies
+		.rails
+			.desc 
+				For making my web apps I use Ruby 
+				%br
+				and Ruby on Rails framework
+		.web
+			.desc
+				To make it look good I use 
+				%br
+				the latest web technologies
+#projects
+	#projects_banner
+		.arrow.prev
+		.arrow.next
+		%ul.projects_list
+			%li.project_1 
+				.p_head Dr. Nona Blog
+				.photo
+					= image_tag asset_path('drnona.jpg')
+			%li.project_2.hide
+				.p_head SmartSearch 
+				.photo
+					= image_tag asset_path('drnona.jpg')
+			%li.project_3.hide
+				.p_head Tuning Crew
+				.photo
+					= image_tag asset_path('drnona.jpg')
+
+	#about_projects.text_block.second_effect
+		.header 
+			My projects
+		.description
+			%p
+				I love when ideas becomes reality.	
+			%p
+				I am making all of my projects on my own.
+				Starting from concept in my head, through designing
+				and making it alive. 
+			
+			%p
+				I am mainly concentrating on minimalism and good user experience.
+	
+	
+
+
+#contact
