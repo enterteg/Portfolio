@@ -2,13 +2,16 @@ scroll_to = (selector) ->
   $('html,body').animate { scrollTop: $(selector).offset().top }, 800
   false
 
+
+
+
 show_menu = ->
   ypos = window.pageYOffset
   if ypos > $('#header').height() - 100
     $('#top_menu').fadeIn()
   else
     $('#top_menu').fadeOut()
-  if ypos > $('#about').position().top - 100 and ypos < $('#projects').position().top
+  if ypos > $('#about').position().top - 100 and ypos < $('#projects').position().top 
     $('#about_me').addClass 'hovered'
     $('#me').addClass 'is-showing'
     setTimeout (->
@@ -58,4 +61,11 @@ $(document).ready ->
       return
     return
   ), 2500
+  projects = ['#project1','#project2','#project3']
+
+  $('#next').click ->
+    $("#projects_banner li.active").removeClass().next().add("#projects_banner li:first").last().addClass("active")
+  $('#prev').click ->
+    $("#projects_banner li.active").removeClass().prev().add("#projects_banner li:last").first().addClass("active")
   return
+
