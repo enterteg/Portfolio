@@ -81,8 +81,10 @@
 						Blog contains admin panel, for easily management of content.
 						Calendar with incoming events and some special content for signed in user.
 			%li.active
-				.photo
-					= image_tag asset_path('smart.jpg')
+				= link_to 'https://smartsearching.herokuapp.com/' , rel: 'nofollow' do
+					.photo.smart
+						#check_this Zobacz online!
+						= image_tag asset_path('smart.jpg')
 				.description
 					%p
 						SmartSearch is an app for people who are going to buy a smartphone
