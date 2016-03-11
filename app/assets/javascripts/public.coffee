@@ -5,12 +5,17 @@ scroll_to = (selector) ->
 
 
 
-show_menu = ->
+sliding_elements_listener = ->
+
+#----- TOP MENU SHOW --------
   ypos = window.pageYOffset
   if ypos > $('#header').height() - 100
     $('#top_menu').fadeIn()
   else
     $('#top_menu').fadeOut()
+
+  #----- ABOUT ME TEXT SHOW -----------
+
   if ypos > $('#about').position().top - 100 and ypos < $('#projects').position().top 
     $('#about_me').addClass 'hovered'
     $('#me').addClass 'is-showing'
@@ -27,6 +32,8 @@ show_menu = ->
     $('#me').removeClass 'is-showing'
     $('#technologies').removeClass 'is-showing'
 
+  #----- PROJECTS TEXT AND BANNER SHOW -----------
+
   if ypos > $('#projects').position().top - 100 and ypos < $('#contact').position().top
     $('#about_projects').addClass 'second_effect_show'
     setTimeout (->
@@ -35,9 +42,24 @@ show_menu = ->
   else
     $('#about_projects').removeClass 'second_effect_show'
     $('#projects_banner').removeClass 'show'
+
+  #-----CONTACT TEXT SHOW -----------
+
+  if ypos > $('#contact').position().top - 100 
+    $('#contact_me').addClass 'is-showing'
+    setTimeout (->
+      $('#contact_form').addClass 'is-showing'
+    ), 800
+  else
+    $('#contact_me').removeClass 'is-showing'
+    $('#contact_form').removeClass 'is-showing'
+
   return
 
-window.addEventListener 'scroll', show_menu
+ #----- SHOW TOP MENU ADDED TO LISTENER -----------
+window.addEventListener 'scroll', sliding_elements_listener
+
+# -------- HEADER MENU BOUNCING ----------
 
 $(document).ready ->
   $('body').bind 'mousewheel', ->
@@ -61,7 +83,8 @@ $(document).ready ->
       return
     return
   ), 2500
-  projects = ['#project1','#project2','#project3']
+
+# ------BANNER FOR PROJECTS-------
 
   $('#next').click ->
     $("#projects_banner li.active").removeClass().next().add("#projects_banner li:first").last().addClass("active")

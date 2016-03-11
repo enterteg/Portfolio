@@ -1,0 +1,28 @@
+#top_menu
+	%ul
+		= link_to 'javascript:void();', :onclick => "scroll_to('#header');" do
+			.menu-icon
+		= link_to 'javascript:void();', :onclick => "scroll_to('#about');" do
+			%li#about_me About me
+		= link_to 'javascript:void();', :onclick => "scroll_to('#projects');" do
+			%li Projects
+		= link_to 'javascript:void();', :onclick => "scroll_to('#contact');" do
+			%li Contact
+
+#header
+	=link_to 'https://www.facebook.com/profile.php?id=100002414904215' do
+		#social
+	#container
+		#logo
+			.logo.portfolio portfolio
+			.logo.name Dawid Jagieła
+			.logo.quote elegance and simplicity
+		#menu
+			%nav
+				%ul
+					= link_to 'javascript:void();', :onclick => "scroll_to('#about');" do
+						%li About me
+					= link_to 'javascript:void();', :onclick => "scroll_to('#projects');" do
+						%li Projects
+					= link_to 'javascript:void();', :onclick => "scroll_to('#contact');" do
+						%li Contact
