@@ -46,12 +46,12 @@ sliding_elements_listener = ->
   #-----CONTACT TEXT SHOW -----------
 
   if ypos > $('#contact').position().top - 100 
-    $('#contact_me').addClass 'is-showing'
+    $('#contact_text').addClass 'is-showing'
     setTimeout (->
       $('#contact_form').addClass 'is-showing'
     ), 800
   else
-    $('#contact_me').removeClass 'is-showing'
+    $('#contact_text').removeClass 'is-showing'
     $('#contact_form').removeClass 'is-showing'
 
   return

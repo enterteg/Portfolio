@@ -1,29 +1,39 @@
 #contact
-	#contact_me.text_block
-		.header
-			Contact me!
-		.description
-			%p 
-				If you have any questions, 
-				or maybe you want me to make a project for you,
-				%br/
-				feel free to contact me!
-	#contact_form_container
-		.form-header
-			You can contact me
-			%br/
-			just right now!
-		#contact_form
+	#contact_me
+		#contact_text
+			.header
+				Contact me!
+			.description
+				%p 
+					If you have any questions, 
+					or maybe you want me to make a project for you,
+					%br/
+					feel free to contact me!
+		#contact_form_container
+			.helper-header
+				You can do it just right now!
 			= form_for @message do |f|
-				.input.small.email-field
+				.input-box.small.email-field
 					= f.label :email
 					= f.text_field :email, class: 'small-input'
-				.input.small.name-field
+				.input-box.small.name-field
 					= f.label :name
 					= f.text_field :name,  class: 'small-input'
-				.input
+				.input-box
 					= f.label :subject
 					= f.text_field :subject
-				.input
+				.input-box.clear
 					= f.label :message
 					= f.text_area :message
+	#contact_forms
+		%ul
+			.helper-header Or contact me via:
+			%li
+				%i.phone
+				+48 733 505 903
+			%li
+				%i.fb
+				My profile
+			%li
+				%i.email
+				dawid0000@gmail.com
