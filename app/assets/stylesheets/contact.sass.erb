@@ -4,7 +4,7 @@
 	width: 100%
 	height: 100vh
 
-	background-image: url('<%= asset_path('bg-contact.jpg') %>')
+	background-image: url('<%= asset_path('bg-contact2.jpg') %>')
 	background-size: cover
 	background-position: center
 	position: relative
@@ -70,32 +70,31 @@
 	#contact_forms
 		float: left
 		position: relative
-		top: 33%
+		top: 31%
 		left: 40px
 		.helper-header
 			margin-bottom: 20px
+			font-size: 37px
 		ul
-			background-color: rgba(0,0,0,0.3)
-			border-radius: 50%
-			padding: 40px 40px
+			padding: 20px 50px 30px 50px
 			list-style: none
-			line-height: 60px
+			line-height: 70px
 			font-size: 23px
-
 			li i
 				display: inline-block
 				vertical-align: middle
 				width: 50px
 				height: 50px
 				border-radius: 50%
-				background: blue
 				margin-right: 10px
-				.email
-
-				.fb
-
-				.phone			
-
+				background-size: cover
+				background-position: center
+				&.email
+					background-image: url('<%= asset_path('gmail-icon.png') %>')
+				&.fb
+					background-image: url('<%= asset_path('fb-icon2.png') %>')
+				&.phone			
+					background-image: url('<%= asset_path('phone-icon.png') %>')
 
 
 .helper-header
