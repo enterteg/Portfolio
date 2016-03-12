@@ -6,10 +6,12 @@ class PublicController < ApplicationController
 		@message = Message.new params[:message]
 		@message.request = request
 		if @message.deliver	
-			flash.now[:error] = nil
+			flash[:notice] = "Message has been sent!"
 		else
-			flash.now[:error] = 'Cannot send message, little gnomes had to broke something!'
-			render.new
+			flash[:notice] = "Cannot send message :("
+		end
+		respond_to do |format|
+			format.js { flash[:notice] }
 		end
 	end
 end

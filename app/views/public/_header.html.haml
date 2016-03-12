@@ -1,13 +1,14 @@
+#notice
 #top_menu
 	%ul
 		= link_to 'javascript:void();', :onclick => "scroll_to('#header');" do
 			.menu-icon
 		= link_to 'javascript:void();', :onclick => "scroll_to('#about');" do
-			%li#about_me About me
+			%li#menu_about_me About me
 		= link_to 'javascript:void();', :onclick => "scroll_to('#projects');" do
-			%li Projects
+			%li#menu_projects Projects
 		= link_to 'javascript:void();', :onclick => "scroll_to('#contact');" do
-			%li Contact
+			%li#menu_contact Contact
 
 #header
 	=link_to 'https://www.facebook.com/profile.php?id=100002414904215' do

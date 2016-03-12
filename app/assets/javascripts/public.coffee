@@ -17,7 +17,7 @@ sliding_elements_listener = ->
   #----- ABOUT ME TEXT SHOW -----------
 
   if ypos > $('#about').position().top - 100 and ypos < $('#projects').position().top 
-    $('#about_me').addClass 'hovered'
+    $('#menu_about_me').addClass 'hovered' # top menu add selected view
     $('#me').addClass 'is-showing'
     setTimeout (->
       $('#whatido').addClass 'is-showing'
@@ -28,6 +28,7 @@ sliding_elements_listener = ->
       return
     ), 1500
   else
+    $('#menu_about_me').removeClass 'hovered'
     $('#whatido').removeClass 'is-showing'
     $('#me').removeClass 'is-showing'
     $('#technologies').removeClass 'is-showing'
@@ -35,22 +36,26 @@ sliding_elements_listener = ->
   #----- PROJECTS TEXT AND BANNER SHOW -----------
 
   if ypos > $('#projects').position().top - 100 and ypos < $('#contact').position().top
+    $('#menu_projects').addClass 'hovered'
     $('#about_projects').addClass 'second_effect_show'
     setTimeout (->
       $('#projects_banner').addClass 'show'
     ), 800
   else
+    $('#menu_projects').removeClass 'hovered'
     $('#about_projects').removeClass 'second_effect_show'
     $('#projects_banner').removeClass 'show'
 
   #-----CONTACT TEXT SHOW -----------
 
   if ypos > $('#contact').position().top - 100 
+    $('#menu_contact').addClass 'hovered'
     $('#contact_text').addClass 'is-showing'
     setTimeout (->
       $('#contact_form').addClass 'is-showing'
     ), 800
   else
+    $('#menu_contact').removeClass 'hovered'
     $('#contact_text').removeClass 'is-showing'
     $('#contact_form').removeClass 'is-showing'
 
@@ -62,6 +67,7 @@ window.addEventListener 'scroll', sliding_elements_listener
 # -------- HEADER MENU BOUNCING ----------
 
 $(document).ready ->
+  $('#notice').hide()
   $('body').bind 'mousewheel', ->
     false
   $('body').hide().fadeIn 1000

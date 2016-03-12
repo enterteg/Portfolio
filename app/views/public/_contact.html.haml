@@ -12,10 +12,10 @@
 		#contact_form_container
 			.helper-header
 				You can do it just right now!
-			= form_for @message do |f|
+			= form_for @message, remote: true do |f|
 				.input-box.small.email-field
 					= f.label :email
-					= f.text_field :email, class: 'small-input'
+					= f.email_field :email, class: 'small-input'
 				.input-box.small.name-field
 					= f.label :name
 					= f.text_field :name,  class: 'small-input'
@@ -25,15 +25,18 @@
 				.input-box.clear
 					= f.label :message
 					= f.text_area :message
+
+				= f.submit 'Send', class: 'submit-button'
 	#contact_forms
 		%ul
 			.helper-header Or contact me via:
 			%li
 				%i.phone
 				+48 733 505 903
-			%li
-				%i.fb
-				My profile
+			= link_to 'https://www.facebook.com/profile.php?id=100002414904215' do 
+				%li
+					%i.fb
+					My profile
 			%li
 				%i.email
 				dawid0000@gmail.com
