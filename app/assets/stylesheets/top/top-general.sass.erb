@@ -48,7 +48,7 @@ $menu_font_size: 27px
 					text-transform: uppercase
 
 				.name 
-					font-family: 'Shadows Into Light Two'
+					font-family: 'Shadows Into Light Two', sans-serif
 					font-size: 95px
 					margin: 10px
 					color: rgba(255,255,255,0.9)
@@ -123,12 +123,16 @@ $menu_font_size: 27px
 					&:hover 
 						transform: scale(1.05)
 
-@media (max-device-width: 999px) 
+@media (max-width: 999px) 
 	$menu_height: 110px
 	$menu_font_size: 18px
 
 	#header
+
+		width: 100%
+		background-size: cover
 		background-image: url('<%= asset_path('header-min.jpg') %>')
+
 		#container
 			#logo
 				.portfolio 
@@ -152,6 +156,35 @@ $menu_font_size: 27px
 					&:hover 
 						transform: scale(1.05)
 
+@media (max-device-width: 999px) 
+	$menu_height: 250px
+	$menu_font_size: 48px
 
+	#header
+		background-image: url('<%= asset_path('header-min.jpg') %>')
+		#social 
+			width: 80px
+			height: 80px
+			background-size: 80px
+		#container
+			#logo
+				.portfolio 
+					font-size: 84px
 
-	
+				.name 
+					font-size: 165px
+
+				.quote 
+					font-size: 60px
+			nav 
+
+				margin-top: 65px
+				.circle 
+					margin: 15px
+					+slide-on-show(0.5s ease all, translateY(-20px))
+					height: $menu_height
+					width: $menu_height
+					line-height: $menu_height
+					font-size: $menu_font_size
+					&:hover 
+						transform: scale(1.05)
