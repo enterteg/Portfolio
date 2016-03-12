@@ -1,2 +1,7 @@
-$("#notice").fadeIn().html("<%= flash[:notice] %>").delay(1000).fadeOut();
-
+$("#notice").fadeIn().html("<%= flash[:notice] %>").delay(1500).fadeOut();
+ <% @message.errors.full_messages do  |msg| %>
+console.log('mama')
+<% end %>
+<% if @send %>
+	$("#new_message").html("Thank you for contacting me! I will reply to you as soon as possible!")
+<% end %>

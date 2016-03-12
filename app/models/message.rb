@@ -6,10 +6,10 @@ class Message < MailForm::Base
   attribute :message
   attribute :nickname,  captcha: true
 
-  validates_presence_of :name, :message => "Imię nie może być puste"
-  validates_presence_of :email, :message => "Email nie może być pusty"
-  validates_presence_of :message, :message => "Wiadomość nie może być pusta"
-  validates :email, format: {with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, message: 'To nie jest prawidłowy email'}
+  validates_presence_of :name
+  validates_presence_of :email
+  validates :message, presence: true, length: 1..500
+  validates :email, format: {with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i}
 
   def headers 
   	{
