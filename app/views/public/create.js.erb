@@ -1,4 +1,4 @@
 $("#notice").fadeIn().html("<%= flash[:notice] %>").delay(1500).fadeOut();
 <% if @send %>
-	$("#new_message").html("Thank you for contacting me! I will reply to you as soon as possible!");
+	$("#new_message").html("Thank you for contacting me!<br/> I will reply to you as soon as possible!");
 <% end %>

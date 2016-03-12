@@ -1,0 +1,27 @@
+@mixin grayscale($percent) 
+	-webkit-filter: grayscale($percent) !important
+	-moz-filter:    grayscale($percent) !important
+	-ms-filter:     grayscale($percent) !important
+	-o-filter:      grayscale($percent) !important
+
+
+@mixin transition($transition...) 
+	-moz-transition:    $transition
+	-o-transition:      $transition
+	-webkit-transition: $transition
+	transition:         $transition
+
+
+@mixin transform($transform...) 
+	-moz-transform:    $transform
+	-o-transform:      $transform
+	-webkit-transform: $transform
+	transform:         $transform
+
+@mixin slide-on-show($time, $values)
+	+transition($time)
+	+transform($values)
+	opacity: 0
+	&.is-showing
+		+transform(translate(0px, 0px))
+		opacity: 1

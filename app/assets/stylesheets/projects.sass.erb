@@ -23,8 +23,8 @@
 			transform: translateY(0px)
 		.arrow
 			padding: 0px 20px
-			color: gray
-			background-color: rgba(0,0,0,0.2)
+			color: rgba(255,255,255,0.5)
+			background-color: rgba(0,0,0,0.3)
 			position: absolute
 			border-radius: 50%
 			top: 45%
@@ -52,7 +52,9 @@
 				opacity: 0
 				transform: translateY(-100px)
 				z-index: -1
-				
+				a
+					&:hover + .description
+						opacity: 1
 				.photo
 					width: 800px
 					height: 450px
@@ -71,23 +73,28 @@
 						opacity: 0
 					img
 						width: 800px
+						
+					&:hover + .description
+						opacity: 1
 					&.smart
-						&:hover
+						&:hover 
 							#check_this
 								display: block
 								opacity: 1
+
+
 				.description
-					font-style: italic
+					transition: 1s ease all
 					margin-top: 50px
 					padding: 30px
-					background-color: rgba(0,0,0,0.3)
+					background-color: rgba(0,0,0,0.1)
 					text-shadow: 0px 0px 5px rgba(0,0,0,0.8)
-					box-shadow: 0px 0px 20px rgba(0,0,0,0.3)
 					line-height: 25px
 					float: left
 					width: 100%
 					box-sizing: border-box
 					font-size: 18px
+					opacity: 0
 					p
 						margin-top: 10px
 

@@ -18,12 +18,10 @@
 			.logo.portfolio portfolio
 			.logo.name Dawid Jagieła
 			.logo.quote elegance and simplicity
-		#menu
-			%nav
-				%ul
-					= link_to 'javascript:void();', :onclick => "scroll_to('#about');" do
-						%li About me
-					= link_to 'javascript:void();', :onclick => "scroll_to('#projects');" do
-						%li Projects
-					= link_to 'javascript:void();', :onclick => "scroll_to('#contact');" do
-						%li Contact
+		%nav
+			= link_to 'javascript:void();', :onclick => "scroll_to('#about');" do
+				.circle About me
+			= link_to 'javascript:void();', :onclick => "scroll_to('#projects');" do
+				.circle Projects
+			= link_to 'javascript:void();', :onclick => "scroll_to('#contact');" do
+				.circle Contact

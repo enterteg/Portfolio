@@ -52,12 +52,17 @@ sliding_elements_listener = ->
     $('#menu_contact').addClass 'hovered'
     $('#contact_text').addClass 'is-showing'
     setTimeout (->
-      $('#contact_form').addClass 'is-showing'
+      $('#contact_form_container').addClass 'is-showing'
     ), 800
+    setTimeout (->
+      $('#contact_forms').addClass 'is-showing'
+    ), 1800
   else
     $('#menu_contact').removeClass 'hovered'
+    $('#menu_contact').removeClass 'hovered'
     $('#contact_text').removeClass 'is-showing'
-    $('#contact_form').removeClass 'is-showing'
+    $('#contact_forms').removeClass 'is-showing'
+    $('#contact_form_container').removeClass 'is-showing'
 
   return
 
@@ -81,9 +86,9 @@ $(document).ready ->
     return
   ), 400
   setTimeout (->
-    $('nav ul li').each (i) ->
+    $('nav .circle').each (i) ->
       setTimeout (->
-        $('nav ul li').eq(i).addClass 'is-showing'
+        $('nav .circle').eq(i).addClass 'is-showing'
         return
       ), 300 * (i + 1)
       return
