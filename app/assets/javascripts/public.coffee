@@ -1,3 +1,6 @@
+$(document).load ->
+  $('#loading_icon').fadeIn()
+
 scroll_to = (selector) ->
   $('html,body').animate { scrollTop: $(selector).offset().top }, 800
   false
@@ -48,7 +51,7 @@ sliding_elements_listener = ->
 
   #-----CONTACT TEXT SHOW -----------
 
-  if ypos > $('#contact').position().top - 100 
+  if ypos > ($('#contact').position().top - 100)
     $('#menu_contact').addClass 'hovered'
     $('#contact_text').addClass 'is-showing'
     setTimeout (->
@@ -67,11 +70,13 @@ sliding_elements_listener = ->
   return
 
  #----- SHOW TOP MENU ADDED TO LISTENER -----------
+ 
 window.addEventListener 'scroll', sliding_elements_listener
 
 # -------- HEADER MENU BOUNCING ----------
 
 $(document).ready ->
+  $('#loading_icon').fadeOut()
   $('#notice').hide()
   $('body').bind 'mousewheel', ->
     false

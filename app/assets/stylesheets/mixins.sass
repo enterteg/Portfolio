@@ -25,3 +25,12 @@
 	&.is-showing
 		+transform(translate(0px, 0px))
 		opacity: 1
+
+@mixin header($align, $width)
+	width: $width
+	font-size: 50px
+	clear:both
+	text-align: $align
+	padding: 10px
+	border-bottom: 1px solid rgba(255,255,255,0.1)
+	margin-bottom: 30px
