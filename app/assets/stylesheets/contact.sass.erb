@@ -17,12 +17,7 @@
 		#contact_text
 			float: left
 			width: 500px
-			transform: translateX(-180px)
-			opacity: 0
-			transition: 1s ease all
-			&.is-showing
-				opacity: 1
-				transform: translateX(0px)
+			+slide-on-show(1s ease all, translateX(-180px))
 			.header
 				color: lightgreen
 				font-size: 55px
@@ -35,15 +30,10 @@
 			width: 480px
 			margin-top: 30px
 			clear: both
-			opacity: 0
-			transition: 1s ease all
-			transform: translateY(180px)
-			&.is-showing
-				opacity: 1
-				transform: translateY(0px)
+			+slide-on-show(1s ease all, translateY(180px))
+
 			#new_message
 				margin-top: 40px
-				font-size: 30px
 				label
 					font-size: 20px
 					margin-bottom: 5px
@@ -62,7 +52,7 @@
 						font-family: 'Roboto'
 						outline: 2px solid rgba(255,255,255,0.3)
 						background-color: rgba(255,255,255,0)
-						@include transition(0.2s ease all)
+						+transition(0.2s ease all)
 						&:hover
 							background-color: rgba(255,255,255,0.1)
 							cursor: pointer
@@ -97,12 +87,7 @@
 		position: relative
 		top: 31%
 		left: 40px
-		opacity: 0
-		transition: 1s ease all
-		transform: translateX(180px)
-		&.is-showing
-			transform: translateX(0px)
-			opacity: 1
+		+slide-on-show(1s ease all, translateX(180px))
 		.helper-header
 			margin-bottom: 20px
 			font-size: 37px
@@ -117,7 +102,7 @@
 				text-decoration: none
 				color: white
 				text-shadow: 0px 0px 10px rgba(250,250,250,0.3)
-				@include transition(0.3s ease all)
+				+transition(0.3s ease all)
 				&:hover
 					left: 5px
 					
@@ -146,3 +131,60 @@
 
 .clear
 	clear: both
+
+@media (max-width: 1600px)
+	#contact
+		#contact_me
+			margin-top: 80px
+			margin-left: 80px
+			#contact_text
+				
+				width: 400px
+				.header
+					margin-bottom: 10px
+					font-size: 40px
+				.description
+					font-size: 20px
+					line-height: 27px
+			#contact_form_container
+				width: 400px
+				margin-top: 20px
+
+				#new_message
+					margin-top: 20px
+					label
+						font-size: 15px
+						margin-bottom: 5px
+					input
+						padding: 0px 10px
+						height: 30px
+						font-size: 12px
+						&.submit-button, &.submit-button:active, &.submit-button:focus
+							width: 30%
+							font-size: 15px
+					.input-box
+						margin-bottom: 10px
+					textarea
+						height: 140px
+						padding: 10px
+						font-size: 12px
+		#contact_forms
+			top: 29%
+			left: 10px
+			+slide-on-show(0.8s ease all, translateX(180px))
+			.helper-header
+				margin-bottom: 5px
+				font-size: 20px
+			ul
+				padding: 30px 
+				line-height: 50px
+				font-size: 17px
+				li
+					i
+						width: 35px
+						height: 35px
+						margin-right: 5px
+
+
+	.helper-header
+		font-size: 20px
