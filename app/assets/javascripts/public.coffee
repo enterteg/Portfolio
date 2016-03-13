@@ -1,5 +1,4 @@
-$(document).load ->
-  $('#loading_icon').fadeIn()
+
 
 scroll_to = (selector) ->
   $('html,body').animate { scrollTop: $(selector).offset().top }, 800
@@ -7,9 +6,9 @@ scroll_to = (selector) ->
 
 
 
-
 sliding_elements_listener = ->
-
+  $('#loading_icon').remove()
+  console.log(window.pageYOffset)
 #----- TOP MENU SHOW --------
   ypos = window.pageYOffset
   if ypos > $('#header').height() - 100
@@ -18,8 +17,9 @@ sliding_elements_listener = ->
     $('#top_menu').fadeOut()
 
   #----- ABOUT ME TEXT SHOW -----------
-
+  console.log($('#about').position().top)
   if ypos > $('#about').position().top - 100 and ypos < $('#projects').position().top 
+
     $('#menu_about_me').addClass 'hovered' # top menu add selected view
     $('#me').addClass 'is-showing'
     setTimeout (->
@@ -32,9 +32,9 @@ sliding_elements_listener = ->
     ), 1500
   else
     $('#menu_about_me').removeClass 'hovered'
-    $('#whatido').removeClass 'is-showing'
-    $('#me').removeClass 'is-showing'
-    $('#technologies').removeClass 'is-showing'
+  #   $('#whatido').removeClass 'is-showing'
+  #   $('#me').removeClass 'is-showing'
+  #   $('#technologies').removeClass 'is-showing'
 
   #----- PROJECTS TEXT AND BANNER SHOW -----------
 
@@ -46,8 +46,8 @@ sliding_elements_listener = ->
     ), 800
   else
     $('#menu_projects').removeClass 'hovered'
-    $('#about_projects').removeClass 'second_effect_show'
-    $('#projects_banner').removeClass 'show'
+  #   $('#about_projects').removeClass 'second_effect_show'
+  #   $('#projects_banner').removeClass 'show'
 
   #-----CONTACT TEXT SHOW -----------
 
@@ -62,25 +62,22 @@ sliding_elements_listener = ->
     ), 1800
   else
     $('#menu_contact').removeClass 'hovered'
-    $('#menu_contact').removeClass 'hovered'
-    $('#contact_text').removeClass 'is-showing'
-    $('#contact_forms').removeClass 'is-showing'
-    $('#contact_form_container').removeClass 'is-showing'
+    # $('#contact_text').removeClass 'is-showing'
+    # $('#contact_forms').removeClass 'is-showing'
+    # $('#contact_form_container').removeClass 'is-showing'
 
   return
 
  #----- SHOW TOP MENU ADDED TO LISTENER -----------
  
 window.addEventListener 'scroll', sliding_elements_listener
+  
 
 # -------- HEADER MENU BOUNCING ----------
 
-$(document).ready ->
-  $('#loading_icon').fadeOut()
+$(window).on "load", ->
+  $('#loading_icon').remove()
   $('#notice').hide()
-  $('body').bind 'mousewheel', ->
-    false
-  $('body').hide().fadeIn 1000
   setTimeout (->
     $('#logo .logo').each (i) ->
       setTimeout (->
