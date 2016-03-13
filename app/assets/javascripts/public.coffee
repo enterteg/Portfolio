@@ -9,7 +9,6 @@ scroll_to = (selector) ->
 sliding_elements_listener = ->
   $('#loading_icon').remove()
   
-  console.log(window.pageYOffset)
 #----- TOP MENU SHOW --------
   ypos = window.pageYOffset
   if ypos > $('#header').height() - 100
@@ -18,7 +17,6 @@ sliding_elements_listener = ->
     $('#top_menu').fadeOut()
 
   #----- ABOUT ME TEXT SHOW -----------
-  console.log($('#about').position().top)
   if ypos > $('#about').position().top - 100 and ypos < $('#projects').position().top 
 
     $('#menu_about_me').addClass 'hovered' # top menu add selected view
@@ -41,14 +39,14 @@ sliding_elements_listener = ->
 
   if ypos > $('#projects').position().top - 100 and ypos < $('#contact').position().top
     $('#menu_projects').addClass 'hovered'
-    $('#about_projects').addClass 'second_effect_show'
+    $('#about_projects').addClass 'is-showing'
     setTimeout (->
-      $('#projects_banner').addClass 'show'
+      $('#projects_banner').addClass 'is-showing'
     ), 800
   else
     $('#menu_projects').removeClass 'hovered'
-  #   $('#about_projects').removeClass 'second_effect_show'
-  #   $('#projects_banner').removeClass 'show'
+  #   $('#about_projects').removeClass 'is-showing'
+  #   $('#projects_banner').removeClass 'is-showing'
 
   #-----CONTACT TEXT SHOW -----------
 

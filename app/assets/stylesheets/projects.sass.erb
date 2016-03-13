@@ -1,26 +1,23 @@
 @import 'mixins'
 
+$banner-width: 800px
+$banner-height: 450px
 #projects
 	width: 100%
 	height: 100vh
 
-	background-image: url('<%= asset_path('bg-idea.jpg') %>')
+	
 	background-size: cover
 	background-position: center
 	position: relative
 
 	#projects_banner
-		width: 800px
-		height: 450px
-		position: relative
+		width: $banner-width
+		height: $banner-height
+		position: absolute
 		top: 160px
 		left: 160px
-		+transition(1s ease all)
-		transform: translateY(-50px)
-		opacity: 0
-		&.show
-			opacity: 1
-			transform: translateY(0px)
+		+slide-on-show(1s ease all, translateY(-50px))
 		.arrow
 			padding: 0px 20px
 			color: rgba(255,255,255,0.5)
@@ -35,9 +32,9 @@
 				background-color: rgba(0,0,0,0.5)
 				cursor: pointer
 				&#prev
-					left: -90px
+					+transform(translateX(-5px))
 				&#next
-					right: -90px
+					+transform(translateX(5px))
 			&#prev
 				left: -85px
 			&#next
@@ -48,7 +45,7 @@
 			position: relative
 			li
 				position: absolute
-				width: 800px
+				width: $banner-width
 				opacity: 0
 				transform: translateY(-100px)
 				z-index: -1
@@ -56,8 +53,8 @@
 					&:hover + .description
 						opacity: 1
 				.photo
-					width: 800px
-					height: 450px
+					width: $banner-width
+					height: $banner-height
 					overflow: hidden
 					box-shadow: 0px 0px 20px rgba(0,0,0,0.3)
 					#check_this
@@ -72,7 +69,7 @@
 						font-size: 30px
 						opacity: 0
 					img
-						width: 800px
+						width: $banner-width
 						
 					&:hover + .description
 						opacity: 1
@@ -106,15 +103,134 @@
 
 
 	#about_projects
+		position: absolute
 		right: 50px
 		left: auto
+		top: 100px
+		width: 450px
+		+slide-on-show(1s,translateX(150px))
 		.header
-			text-align: right
 			position: relative
-			right: 20px
+			+header(right,450px)
+			right: 15px
 		.description
+			font-size: 23px
 			text-align: right
-			width: 400px
+			line-height: 27px
 			text-shadow: 0px 0px 3px rgba(0,0,0,0.6)
+			p
+				margin-top: 20px
 
 
+
+
+@media (min-width: 1859px)
+	#projects
+		background-image: url('<%= asset_path('bg-idea.jpg') %>')
+
+
+@media (max-width: 1859px) and (min-width: 1451px)
+	$banner-width: 780px
+	$banner-height: 430px
+	#projects
+		background-image: url('<%= asset_path('bg-idea.jpg') %>')
+
+		#projects_banner
+			top: 100px
+			.arrow
+				padding: 0px 15px
+				top: 35%
+				font-size: 40px
+				&#prev
+					left: -65px
+				&#next
+					right: -65px
+			max-width: $banner-width
+			height: #banner-height
+			left: 100px
+			ul.projects_list
+				li
+					width: $banner-width
+					.photo
+						width: $banner-width
+						height: $banner-height
+						img
+							width: $banner-width
+					.description
+						margin-top: 30px
+						padding: 20px
+						line-height: 18px
+						box-sizing: border-box
+						font-size: 15px
+						opacity: 0
+						p
+							margin-top: 10px
+
+		#about_projects
+			right: 30px
+			top: 100px
+			width: 350px
+			+slide-on-show(1s,translateX(150px))
+			.header
+				+header(right,350px)
+				font-size: 45px
+				right: 10px
+			.description
+				font-size: 20px
+				line-height: 25px
+				p
+					margin-top: 20px
+	
+
+
+@media (max-width: 1450px) and (min-width: 1200px)
+	$banner-width: 600px
+	$banner-height: 340px
+	#projects
+		background-image: url('<%= asset_path('bg-idea.jpg') %>')
+
+		#projects_banner
+			top: 100px
+			.arrow
+				padding: 0px 15px
+				top: 35%
+				font-size: 40px
+				&#prev
+					left: -65px
+				&#next
+					right: -65px
+			max-width: $banner-width
+			height: #banner-height
+			left: 100px
+			ul.projects_list
+				li
+					width: $banner-width
+					.photo
+						width: $banner-width
+						height: $banner-height
+						img
+							width: $banner-width
+					.description
+						margin-top: 30px
+						padding: 20px
+						line-height: 18px
+						box-sizing: border-box
+						font-size: 13px
+						opacity: 0
+						p
+							margin-top: 10px
+
+		#about_projects
+			right: 25px
+			top: 100px
+			width: 300px
+			+slide-on-show(1s,translateX(150px))
+			.header
+				+header(right,300px)
+				font-size: 45px
+				right: 10px
+			.description
+				font-size: 16px
+				line-height: 23px
+				p
+					margin-top: 20px
