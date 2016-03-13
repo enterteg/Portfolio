@@ -8,6 +8,7 @@ scroll_to = (selector) ->
 
 sliding_elements_listener = ->
   $('#loading_icon').remove()
+  
   console.log(window.pageYOffset)
 #----- TOP MENU SHOW --------
   ypos = window.pageYOffset
