@@ -59,19 +59,19 @@
 	#projects
 		background-image: url('<%= asset_path('bg-idea.jpg') %>')
 		#projects_banner
-			top: 100px
+			top: 110px
 			width: $banner-width
 			height: #banner-height
 			left: 150px
 
 			.arrow
-				padding: 0px 15px
+				padding: 0px 17px
 				top: 0.45*$banner-height
-				font-size: 40px
+				font-size: 50px
 				&#prev
-					left: -65px
+					left: -75px
 				&#next
-					right: -65px
+					right: -75px
 			
 			ul.projects_list
 				li
@@ -96,7 +96,7 @@
 			width: 350px
 			+slide-on-show(1s,translateX(150px))
 			.header
-				+header(right, 440px)
+				+header(right, 340px)
 				font-size: 45px
 			.description
 				font-size: 20px
@@ -113,17 +113,18 @@
 
 		#projects_banner
 			top: 100px
+			width: $banner-width
+			height: $banner-height
+			left: 100px
 			.arrow
 				padding: 0px 15px
-				top: 35%
+				top: 0.45*$banner-height
 				font-size: 40px
 				&#prev
 					left: -65px
 				&#next
 					right: -65px
-			max-width: $banner-width
-			height: #banner-height
-			left: 100px
+			
 			ul.projects_list
 				li
 					width: $banner-width
@@ -164,17 +165,19 @@
 
 		#projects_banner
 			top: 100px
-			.arrow
-				padding: 0px 15px
-				top: 35%
-				font-size: 40px
-				&#prev
-					left: -65px
-				&#next
-					right: -65px
-			max-width: $banner-width
-			height: #banner-height
+			width: $banner-width
+			height: $banner-height
 			left: 100px
+
+			.arrow
+				padding: 0px 10px
+				top: 0.45*$banner-height
+				font-size: 30px
+				&#prev
+					left: -45px
+				&#next
+					right: -45px
+			
 			ul.projects_list
 				li
 					width: $banner-width

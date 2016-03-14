@@ -13,13 +13,11 @@
 		position: absolute
 		+slide-on-show(1s ease all, translateY(-50px))
 		.arrow
-			padding: 0px 20px
 			color: rgba(255,255,255,0.5)
 			background-color: rgba(0,0,0,0.3)
 			position: absolute
 			border-radius: 50%
 			z-index: 0
-			font-size: 60px
 			+transition(0.2s ease all)
 			&:hover
 				background-color: rgba(0,0,0,0.5)
@@ -28,10 +26,7 @@
 					+transform(translateX(-5px))
 				&#next
 					+transform(translateX(5px))
-			&#prev
-				left: -85px
-			&#next
-				right: -85px
+
 
 		ul.projects_list
 			list-style: none
@@ -95,7 +90,6 @@
 	#about_projects
 		position: absolute
 		left: auto
-		width: 450px
 		+slide-on-show(1s,translateX(150px))
 		.header
 			position: relative
