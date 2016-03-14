@@ -1,0 +1,133 @@
+@import 'mixins'
+
+@media (min-width: 2201px)
+
+	$menu_height: 240px
+	$menu_font_size: 45px
+	#header
+		background-image: url('<%= asset_path('header2.jpg') %>')
+
+
+		#container
+			#logo
+				.portfolio 
+					font-size: 84px
+
+				.name 
+					font-size: 155px
+
+				.quote 
+					font-size: 50px
+			nav 
+
+				margin-top: 65px
+				.circle 
+					margin: 15px
+					+slide-on-show(0.5s ease all, translateY(-20px))
+					height: $menu_height
+					width: $menu_height
+					line-height: $menu_height
+					font-size: $menu_font_size
+					&:hover 
+						transform: scale(1.05)
+
+@media (max-width: 2200px) and (min-width: 1500px)
+	#header
+		background-image: url('<%= asset_path('header2.jpg') %>')
+
+
+@media (max-width: 1499px) and (min-width: 1000px)
+
+	$menu_height: 130px
+	$menu_font_size: 22px
+
+	#header
+		background-image: url('<%= asset_path('header-hd.jpg') %>')
+		#container
+			#logo
+				.portfolio 
+					font-size: 37px
+
+				.name 
+					font-size: 85px
+
+				.quote 
+					font-size: 25px
+			nav 
+				margin-top: 25px
+				.circle 
+					+slide-on-show(0.5s ease all, translateY(-20px))
+					height: $menu_height
+					width: $menu_height
+					line-height: $menu_height
+					font-size: $menu_font_size
+					&:hover 
+						transform: scale(1.05)
+
+@media (max-width: 999px) 
+	$menu_height: 110px
+	$menu_font_size: 18px
+
+	#header
+
+		width: 100%
+		background-size: cover
+		background-image: url('<%= asset_path('header-min.jpg') %>')
+
+		#container
+			#logo
+				.portfolio 
+					font-size: 34px
+
+				.name 
+					font-size: 65px
+
+				.quote 
+					font-size: 25px
+			nav 
+				width: 100%
+				margin-top: 25px
+				.circle 
+					margin: 5px
+					+slide-on-show(0.5s ease all, translateY(-20px))
+					height: $menu_height
+					width: $menu_height
+					line-height: $menu_height
+					font-size: $menu_font_size
+					&:hover 
+						transform: scale(1.05)
+
+@media (max-device-width: 999px) 
+	$menu_height: 250px
+	$menu_font_size: 48px
+
+	#header
+		background-image: url('<%= asset_path('header-min.jpg') %>')
+		#social 
+			width: 80px
+			height: 80px
+			background-size: 80px
+		#container
+			#logo
+				.portfolio 
+					font-size: 84px
+
+				.name 
+					font-size: 165px
+
+				.quote 
+					font-size: 60px
+			nav 
+				display: -webkit-flex
+				margin: 0 auto
+				width: 80%
+				margin-top: 65px
+				.circle 
+					margin: 15px
+					+slide-on-show(0.5s ease all, translateY(-20px))
+					height: $menu_height
+					width: $menu_height
+					line-height: $menu_height
+					font-size: $menu_font_size
+					&:hover 
+						transform: scale(1.05)

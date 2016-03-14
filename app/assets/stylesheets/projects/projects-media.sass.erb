@@ -1,0 +1,207 @@
+@import 'mixins'
+
+@media (min-width: 2200px)	
+	$banner-width: 1080px
+	$banner-height: 670px
+	#projects
+		background-image: url('<%= asset_path('bg-idea.jpg') %>')
+		#projects_banner
+			top: 200px
+			width: $banner-width
+			height: #banner-height
+			left: 250px
+
+			.arrow
+				padding: 0px 15px
+				top: 0.45*$banner-height
+				font-size: 40px
+				&#prev
+					left: -65px
+				&#next
+					right: -65px
+			
+			ul.projects_list
+				li
+					width: $banner-width
+					.photo
+						width: $banner-width
+						height: $banner-height
+						img
+							width: $banner-width
+					.description
+						margin-top: 30px
+						padding: 20px
+						line-height: 33px
+						font-size: 27px
+						opacity: 0
+
+						p
+							margin-top: 10px
+
+		#about_projects
+			right: 170px
+			top: 120px
+			width: 350px
+			+slide-on-show(1s,translateX(150px))
+			.header
+				+header(right,540px)
+				font-size: 75px
+			.description
+				font-size: 30px
+				line-height: 35px
+				width: 550px
+				p
+					margin-top: 20px
+
+@media (max-width: 2199px) and (min-width: 1860px)
+	$banner-width: 800px
+	$banner-height: 430px
+	#projects
+		background-image: url('<%= asset_path('bg-idea.jpg') %>')
+		#projects_banner
+			top: 100px
+			width: $banner-width
+			height: #banner-height
+			left: 150px
+
+			.arrow
+				padding: 0px 15px
+				top: 0.45*$banner-height
+				font-size: 40px
+				&#prev
+					left: -65px
+				&#next
+					right: -65px
+			
+			ul.projects_list
+				li
+					width: $banner-width
+					.photo
+						width: $banner-width
+						height: $banner-height
+						img
+							width: $banner-width
+					.description
+						margin-top: 30px
+						padding: 20px
+						line-height: 22px
+						font-size: 19px
+
+						p
+							margin-top: 10px
+
+		#about_projects
+			right: 30px
+			top: 100px
+			width: 350px
+			+slide-on-show(1s,translateX(150px))
+			.header
+				+header(right, 440px)
+				font-size: 45px
+			.description
+				font-size: 20px
+				line-height: 25px
+				p
+					margin-top: 20px
+
+
+@media (max-width: 1859px) and (min-width: 1451px)
+	$banner-width: 780px
+	$banner-height: 430px
+	#projects
+		background-image: url('<%= asset_path('bg-idea.jpg') %>')
+
+		#projects_banner
+			top: 100px
+			.arrow
+				padding: 0px 15px
+				top: 35%
+				font-size: 40px
+				&#prev
+					left: -65px
+				&#next
+					right: -65px
+			max-width: $banner-width
+			height: #banner-height
+			left: 100px
+			ul.projects_list
+				li
+					width: $banner-width
+					.photo
+						width: $banner-width
+						height: $banner-height
+						img
+							width: $banner-width
+					.description
+						margin-top: 30px
+						padding: 20px
+						line-height: 18px
+						font-size: 15px
+
+						p
+							margin-top: 10px
+
+		#about_projects
+			right: 30px
+			top: 100px
+			width: 350px
+			.header
+				+header(right,350px)
+				font-size: 45px
+				right: 10px
+			.description
+				font-size: 20px
+				line-height: 25px
+				p
+					margin-top: 20px
+	
+
+@media (max-width: 1450px) 
+	$banner-width: 600px
+	$banner-height: 340px
+	#projects
+		background-image: url('<%= asset_path('bg-idea.jpg') %>')
+
+		#projects_banner
+			top: 100px
+			.arrow
+				padding: 0px 15px
+				top: 35%
+				font-size: 40px
+				&#prev
+					left: -65px
+				&#next
+					right: -65px
+			max-width: $banner-width
+			height: #banner-height
+			left: 100px
+			ul.projects_list
+				li
+					width: $banner-width
+					.photo
+						width: $banner-width
+						height: $banner-height
+						img
+							width: $banner-width
+					.description
+						margin-top: 30px
+						padding: 15px
+						line-height: 18px
+						font-size: 13px
+
+						p
+							margin-top: 10px
+
+		#about_projects
+			right: 25px
+			top: 100px
+			width: 300px
+			.header
+				+header(right,300px)
+				font-size: 45px
+				right: 10px
+			.description
+				font-size: 17px
+				line-height: 23px
+				p
+					margin-top: 16px

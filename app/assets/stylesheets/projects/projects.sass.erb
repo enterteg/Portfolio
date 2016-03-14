@@ -1,0 +1,110 @@
+@import 'mixins'
+
+#projects
+	width: 100%
+	height: 100vh
+
+	
+	background-size: cover
+	background-position: center
+	position: relative
+
+	#projects_banner
+		position: absolute
+		+slide-on-show(1s ease all, translateY(-50px))
+		.arrow
+			padding: 0px 20px
+			color: rgba(255,255,255,0.5)
+			background-color: rgba(0,0,0,0.3)
+			position: absolute
+			border-radius: 50%
+			z-index: 0
+			font-size: 60px
+			+transition(0.2s ease all)
+			&:hover
+				background-color: rgba(0,0,0,0.5)
+				cursor: pointer
+				&#prev
+					+transform(translateX(-5px))
+				&#next
+					+transform(translateX(5px))
+			&#prev
+				left: -85px
+			&#next
+				right: -85px
+
+		ul.projects_list
+			list-style: none
+			position: relative
+			li
+				position: absolute
+				opacity: 0
+				transform: translateY(-100px)
+				z-index: -1
+				a
+					&:hover + .description
+						opacity: 1
+				.photo
+					overflow: hidden
+					box-shadow: 0px 0px 20px rgba(0,0,0,0.3)
+					#check_this
+						+transition(0.5s ease all)
+						position: absolute
+						text-align: center
+						color: white
+						top: 10%
+						padding: 10px 0px
+						background-color: rgba(0,0,0,0.5)
+						width: 100%
+						font-size: 30px
+						opacity: 0
+					
+						
+					&:hover + .description
+						opacity: 1
+					&.smart
+						&:hover 
+							#check_this
+								display: block
+								opacity: 1
+
+
+				.description
+					transition: 1s ease all
+					margin-top: 50px
+					padding: 30px
+					background-color: rgba(0,0,0,0.1)
+					text-shadow: 0px 0px 5px rgba(0,0,0,0.8)
+					float: left
+					width: 100%
+					box-sizing: border-box
+					opacity: 0
+					
+					p
+						margin-top: 20px
+						&:first-child
+							margin-top: 0px
+
+				&.active
+					transform: translateY(0px)
+					+transition(1s ease all)
+					z-index: 10
+					opacity: 1
+
+
+	#about_projects
+		position: absolute
+		left: auto
+		width: 450px
+		+slide-on-show(1s,translateX(150px))
+		.header
+			position: relative
+		.description
+			text-align: right
+			text-shadow: 0px 0px 3px rgba(0,0,0,0.6)
+			p
+				margin-top: 20px
+
+
+
+
